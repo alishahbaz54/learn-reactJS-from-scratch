@@ -1,3 +1,4 @@
+import './RenderingStyle.css'
 // 1st Example
 
 // export default function Button(){
@@ -117,19 +118,113 @@
 // ======================================================================================================
 
 // 6th example
-function Button({onSmash, children}){
-  return(
-    <button onClick={onSmash}>
-      {children}
-    </button>
-  );
-}
+// function Button({onSmash, children}){
+//   return(
+//     <button onClick={onSmash}>
+//       {children}
+//     </button>
+//   );
+// }
 
-export default function EvenntButton(){
+// export default function EvenntButton(){
+//   return(
+//     <div>
+//       <Button onSmash={() =>alert('Playing!')}>Play Movie</Button>
+//       <Button onSmash={() =>alert('Uploading!')}>Upload Image</Button>
+//     </div>
+//   )
+// }
+
+// ======================================================================================================
+// Custom naming event handler props
+// ======================================================================================================
+
+// 7th example
+
+// export default function CustomNameEvent(){
+//   return(
+//     <Toolbar onPlayMovie={() =>{alert('Custom Playing!')}} onUploadImage={() =>{alert('Custom Uploading!')}} />
+//   );
+// }
+
+// function Toolbar({onPlayMovie, onUploadImage}){
+//   return(
+//     <div>
+//       <Button onClick={onPlayMovie}>Play Movie</Button>
+//       <Button onClick={onUploadImage}>Upload Image</Button>
+//     </div>
+//   );
+// }
+
+// function Button({onClick, children}){
+//   return(
+//     <button onClick={onClick}>
+//       {children}
+//     </button>
+//   );
+// }
+
+// ======================================================================================================
+// Event Propagation:
+// The following example cause the event propagation which means it fire both child and parent element
+// trigger. how to solve the this propblem go to example 9th
+// ======================================================================================================
+
+// 8th example
+// export default function EventPropagation(){
+//   return(
+//     <div className="Toolbar" onClick={() => {
+//       alert('You clicked on the toolbar!')
+//     }}>
+//       <button onClick={() =>{alert('Playing!')}}>Play Movie</button>
+//       <button onClick={() => {alert('Uploading!')}}>Upload Image</button>
+//     </div>
+//   );
+// }
+
+// 9th example
+// function Button({onClick, children}){
+//   return(
+//     <button onClick={e =>{
+//       e.stopPropagation();
+//       onClick();
+//     }}>{children}</button>
+//   );
+// }
+
+// export default function ParventEvenetPropagation(){
+//   return(
+//     <div className="Toolbar" onClick={() =>{alert('You clicked on the toolbar!')}}>
+//       <Button onClick={() =>{alert('Playing!')}}>Play Movie</Button>
+//       <Button onClick={() => {alert('Uploading!')}}>Upload Image</Button>
+//     </div>
+//   );
+// }
+
+
+// ======================================================================================================
+// Preventing default behavior:
+// ======================================================================================================
+
+// 10th example
+// export default function Signup(){
+//   return(
+//     <form onSubmit={() =>{alert('Submitting!')}}>
+//       <input />
+//       <button>Send</button>
+//     </form>
+//   );
+// }
+
+// 11th example (Solution of the 10th example)
+export default function SignupParvent(){
   return(
-    <div>
-      <Button onSmash={() =>alert('Playing!')}>Play Movie</Button>
-      <Button onSmash={() =>alert('Uploading!')}>Upload Image</Button>
-    </div>
+    <form onSubmit={e => {
+      e.preventDefault();
+      alert('Sumbitting!');
+    }}>
+      <input />
+      <button>Send</button>
+    </form>
   )
 }

@@ -13,6 +13,11 @@
 import InlineEventHandler from "./Responding Events Components/ResopndingEvent";
 import Toolbar from "./Responding Events Components/ResopndingEvent";
 import EvenntButton from "./Responding Events Components/ResopndingEvent";
+import EventPropagation from "./Responding Events Components/ResopndingEvent";
+import Signup from "./Responding Events Components/ResopndingEvent";
+import SignupParvent from "./Responding Events Components/ResopndingEvent";
+import ParventEvenetPropagation from "./Responding Events Components/ResopndingEvent";
+import CustomNameEvent from "./Responding Events Components/ResopndingEvent";
 import Toolbar2nd from "./Responding Events Components/ResopndingEvent";
 import ArrowFunctionButton from "./Responding Events Components/ResopndingEvent";
 import ButtonClick from "./Responding Events Components/ResopndingEvent";
@@ -66,7 +71,12 @@ export default function App() {
       
       {/* <Toolbar /> */}
       {/* <Toolbar2nd /> */}
-      <EvenntButton />
+      {/* <EvenntButton /> */}
+      {/* <CustomNameEvent /> */}
+      {/* <EventPropagation /> */}
+      {/* <ParventEvenetPropagation /> */}
+      {/* <Signup /> */}
+      <SignupParvent />
     </div>
   );
 }
