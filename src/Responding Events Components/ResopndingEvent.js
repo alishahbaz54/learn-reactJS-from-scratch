@@ -228,3 +228,11 @@ export default function SignupParvent(){
     </form>
   )
 }
+
+
+/*
+
+e.stopPropagation() stops the event handlers attached to the tags above from firing.
+e.preventDefault() prevents the default browser behavior for the few events that have it.
+
+*/
